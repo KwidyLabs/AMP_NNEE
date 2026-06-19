@@ -12,7 +12,7 @@
     {
         "DisplayName": "Module Name",
         "Category": "Module",
-        "Description": "The name of the .mod file to load, WITHOUT the .mod extension. Upload your module file to the userdata/modules folder via SFTP or the AMP File Manager before starting the server.",
+        "Description": "The module to load - enter the .mod file's name WITHOUT the .mod extension (e.g. for a file named MyWorld.mod, enter MyWorld, not MyWorld.mod). Case-sensitive. Upload the module into userdata/modules (and any required haks into userdata/hak, custom .tlk into userdata/tlk) before starting. The default 'ChangeMe' exists only so the first SteamCMD install can run past this required field - replace it with your real module name before starting the server.",
         "Keywords": "module,mod",
         "FieldName": "ModuleName",
         "InputType": "text",
@@ -20,7 +20,7 @@
         "IncludeInCommandLine": true,
         "Required": true,
         "Placeholder": "MyModule",
-        "DefaultValue": "",
+        "DefaultValue": "ChangeMe",
         "EnumValues": {}
     },
     {

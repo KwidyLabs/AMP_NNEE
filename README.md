@@ -35,11 +35,15 @@ and cross-checked against existing templates in
 3. **Only one port to forward:** UDP 5121 (configurable). This single UDP port
    is what needs forwarding for direct-connect multiplayer.
 
-4. **Module upload.** `-module` is required and points to a `.mod` file
-   (without the extension) that must already exist in the server's
-   `userdata/modules` folder. The update stages pre-create `userdata/modules`
-   and `userdata/hak` — upload your module (and any required haks) there via
-   SFTP or the AMP File Manager *before* first starting the instance.
+4. **Module Name = the module's name, not its filename.** In the **Module
+   Name** setting, enter the name *without* the `.mod` extension — e.g. for
+   `MyWorld.mod`, enter `MyWorld`. Entering `MyWorld.mod` makes nwserver look
+   for `MyWorld.mod.mod` and fail with "Unable to load module". It's
+   case-sensitive. Upload the `.mod` into `userdata/modules` (and any required
+   haks into `userdata/hak`, custom `.tlk` into `userdata/tlk`) *before*
+   starting. The field defaults to `ChangeMe` so the first SteamCMD install can
+   run past the required-field check — replace it with your real module name
+   before you start the server.
 
 5. **AppReadyRegex** matches `Server: Module loaded` — the line the server
    prints once the module has finished loading and players can connect
