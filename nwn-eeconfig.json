@@ -1,0 +1,299 @@
+[
+    {
+        "DisplayName": "Game Port",
+        "Category": "Network",
+        "Description": "The UDP port players connect to. Forward this port on your router/firewall.",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "ParamFieldName": "port",
+        "Hidden": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Module Name",
+        "Category": "Module",
+        "Description": "The name of the .mod file to load, WITHOUT the .mod extension. Upload your module file to the userdata/modules folder via SFTP or the AMP File Manager before starting the server.",
+        "Keywords": "module,mod",
+        "FieldName": "ModuleName",
+        "InputType": "text",
+        "ParamFieldName": "module",
+        "IncludeInCommandLine": true,
+        "Required": true,
+        "Placeholder": "MyModule",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "NWSync URL",
+        "Category": "Module",
+        "Description": "Optional. The base URL of an nwsync repository if you are using nwsync to distribute module content to players instead of haks.",
+        "Keywords": "nwsync",
+        "FieldName": "NWSyncURL",
+        "InputType": "text",
+        "ParamFieldName": "nwsyncurl",
+        "IncludeInCommandLine": true,
+        "SkipIfEmpty": true,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Name",
+        "Category": "Server Settings",
+        "Description": "The name of your server as it appears in the multiplayer server list.",
+        "Keywords": "server,name",
+        "FieldName": "ServerName",
+        "InputType": "text",
+        "ParamFieldName": "servername",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "My NWN:EE Server",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Public Server",
+        "Category": "Server Settings",
+        "Description": "If enabled, the server is advertised on the Beamdog master server list. If disabled, it is only reachable by direct IP connection.",
+        "Keywords": "public,master,list",
+        "FieldName": "PublicServer",
+        "InputType": "checkbox",
+        "ParamFieldName": "publicserver",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "Server Settings",
+        "Description": "The maximum number of player connections allowed.",
+        "Keywords": "maxclients,players,slots",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "244",
+        "ParamFieldName": "maxclients",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "64",
+        "Suffix": "players",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Player Password",
+        "Category": "Server Settings",
+        "Description": "Password players must enter to join. Leave blank for no password.",
+        "Keywords": "password",
+        "FieldName": "PlayerPassword",
+        "InputType": "password",
+        "ParamFieldName": "playerpassword",
+        "IncludeInCommandLine": true,
+        "SkipIfEmpty": true,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "DM Password",
+        "Category": "Server Settings",
+        "Description": "Password required to log in as a Dungeon Master. Leave blank to disable DM login.",
+        "Keywords": "dm,password,dungeonmaster",
+        "FieldName": "DMPassword",
+        "InputType": "password",
+        "ParamFieldName": "dmpassword",
+        "IncludeInCommandLine": true,
+        "SkipIfEmpty": true,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Password",
+        "Category": "Server Settings",
+        "Description": "Password for remote administration commands. NWServer currently does not implement remote admin networking, but the flag is exposed here for completeness/future use.",
+        "Keywords": "admin,password",
+        "FieldName": "AdminPassword",
+        "InputType": "password",
+        "ParamFieldName": "adminpassword",
+        "IncludeInCommandLine": true,
+        "SkipIfEmpty": true,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Vault",
+        "Category": "Player Rules",
+        "Description": "Server Vault keeps player characters stored on the server (recommended for persistent worlds). Local Vault lets players use characters from their own client, which is much easier to exploit/cheat with.",
+        "Keywords": "vault,characters",
+        "FieldName": "ServerVault",
+        "InputType": "enum",
+        "ParamFieldName": "servervault",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "0": "Local Vault",
+            "1": "Server Vault"
+        }
+    },
+    {
+        "DisplayName": "Enforce Legal Characters (ELC)",
+        "Category": "Player Rules",
+        "Description": "Rejects characters that don't conform to the base game rules. Strongly recommended to leave enabled unless you are intentionally allowing custom content classes/feats.",
+        "Keywords": "elc,legal,characters",
+        "FieldName": "ELC",
+        "InputType": "checkbox",
+        "ParamFieldName": "elc",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Item Level Restrictions (ILR)",
+        "Category": "Player Rules",
+        "Description": "Enforces a gold cost cap on equippable items based on character level.",
+        "Keywords": "ilr,item,level",
+        "FieldName": "ILR",
+        "InputType": "checkbox",
+        "ParamFieldName": "ilr",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Minimum Level",
+        "Category": "Player Rules",
+        "Description": "Minimum character level required to join. Only useful on Local Vault servers.",
+        "Keywords": "minlevel",
+        "FieldName": "MinLevel",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "40",
+        "ParamFieldName": "minlevel",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "1",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Maximum Level",
+        "Category": "Player Rules",
+        "Description": "Maximum character level allowed. Going above 40 requires NWNX and its extensions.",
+        "Keywords": "maxlevel",
+        "FieldName": "MaxLevel",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "60",
+        "ParamFieldName": "maxlevel",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "40",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "PvP Setting",
+        "Category": "Player Rules",
+        "Description": "Server-wide PvP rule. Individual areas can still override this with their own PvP settings.",
+        "Keywords": "pvp",
+        "FieldName": "PVP",
+        "InputType": "enum",
+        "ParamFieldName": "pvp",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "2",
+        "EnumValues": {
+            "0": "None",
+            "1": "Party Only",
+            "2": "Full PvP"
+        }
+    },
+    {
+        "DisplayName": "Difficulty",
+        "Category": "Player Rules",
+        "Description": "Combat/encounter difficulty setting.",
+        "Keywords": "difficulty",
+        "FieldName": "Difficulty",
+        "InputType": "enum",
+        "ParamFieldName": "difficulty",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "3",
+        "EnumValues": {
+            "1": "Easy",
+            "2": "Normal",
+            "3": "D&D Hardcore",
+            "4": "Very Difficult"
+        }
+    },
+    {
+        "DisplayName": "Allow Player Pause",
+        "Category": "Player Rules",
+        "Description": "If enabled, any player can pause the game. If disabled, only DMs can pause.",
+        "Keywords": "pause",
+        "FieldName": "PauseAndPlay",
+        "InputType": "checkbox",
+        "ParamFieldName": "pauseandplay",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Single Party Mode",
+        "Category": "Player Rules",
+        "Description": "If enabled, all connected PCs are forced into a single party.",
+        "Keywords": "party,oneparty",
+        "FieldName": "OneParty",
+        "InputType": "checkbox",
+        "ParamFieldName": "oneparty",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Reload Module When Empty",
+        "Category": "Server Settings",
+        "Description": "If enabled, the module resets/reloads whenever the server becomes empty. This can take a long time and wipes any non-persistent state, so it's recommended to leave this off for most persistent-world servers.",
+        "Keywords": "reload,empty",
+        "FieldName": "ReloadWhenEmpty",
+        "InputType": "checkbox",
+        "ParamFieldName": "reloadwhenempty",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Autosave Interval",
+        "Category": "Server Settings",
+        "Description": "How often (in minutes) to autosave the running game. Set to 0 to disable autosave.",
+        "Keywords": "autosave",
+        "FieldName": "AutoSaveInterval",
+        "InputType": "number",
+        "MinValue": "0",
+        "ParamFieldName": "autosaveinterval",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "Suffix": "minutes",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Browser Game Type",
+        "Category": "Server Settings",
+        "Description": "Legacy category field shown in the 1.69-era server browser. Mostly cosmetic in NWN:EE.",
+        "Keywords": "gametype",
+        "FieldName": "GameType",
+        "InputType": "number",
+        "ParamFieldName": "gametype",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {}
+    }
+]

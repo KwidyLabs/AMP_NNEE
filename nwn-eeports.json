@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 5121,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "Main game traffic port. This is the only port that needs to be forwarded for clients to connect."
+    }
+]

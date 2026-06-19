@@ -1,0 +1,37 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "704450",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Set Linux Executable Permissions",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "{{$FullBaseDir}}bin/linux-x86/nwserver-linux",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "User Data Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}userdata",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Modules Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}userdata/modules",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Hak Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullRootDir}}userdata/hak",
+        "SkipOnFailure": false
+    }
+]
